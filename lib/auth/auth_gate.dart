@@ -4,6 +4,7 @@ Auth gate will continuously listen for auth state changes.
 
 import 'package:flutter/material.dart';
 import 'package:myapp/pages/login_page.dart';
+import 'package:myapp/pages/profile_page.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class AuthGate extends StatelessWidget {
@@ -24,9 +25,9 @@ class AuthGate extends StatelessWidget {
         final session = snapshot.hasData ? snapshot.data!.session : null;
         //Check if there is valid session
         if (session != null) {
-          return ProfilePage();
+          return const ProfilePage();
         } else {
-          return LoginPage(); 
+          return const LoginPage(); 
         }
       },
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/auth/auth_service.dart';
+import 'package:myapp/pages/register_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -36,17 +37,25 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
+        padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 50),
         children: [
           TextField(
             controller: _emailController,
+            decoration: const InputDecoration(labelText: "Email"),
           ),
           TextField(
             controller: _passwordController,
+            decoration: const InputDecoration(labelText: "Password"),
           ),
+          const SizedBox(height: 12),
           ElevatedButton(
             onPressed: login,
             child: const Text("Login"),
           ),
+          const SizedBox(height: 12),
+          GestureDetector(
+            onTap: () =>Navigator.push(context,MaterialPageRoute(builder: (context)=> const RegisterPage()) ),
+            child: const Center(child: Text("Don't have an account?Sign Up")))
         ],
       ),
     );

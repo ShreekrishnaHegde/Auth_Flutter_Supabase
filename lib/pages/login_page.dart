@@ -36,6 +36,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: const Text("Login"),),
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 50),
         children: [
@@ -46,6 +47,7 @@ class _LoginPageState extends State<LoginPage> {
           TextField(
             controller: _passwordController,
             decoration: const InputDecoration(labelText: "Password"),
+            obscureText: true,
           ),
           const SizedBox(height: 12),
           ElevatedButton(

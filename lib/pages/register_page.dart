@@ -45,14 +45,17 @@ class _RegisterPageState extends State<RegisterPage> {
           TextField(
             controller: _emailController,
             decoration: const InputDecoration(labelText: "Email"),
+        
           ),
           TextField(
             controller: _passwordController,
             decoration: const InputDecoration(labelText: "Password"),
+            obscureText: true,
           ),
           TextField(
             controller: _confirmPasswordController,
             decoration: InputDecoration(labelText:"Confirm Password"),
+            obscureText: true,
           ),
           const SizedBox(height: 12),
           ElevatedButton(onPressed: signUp, child: Text("Sign Up")),
